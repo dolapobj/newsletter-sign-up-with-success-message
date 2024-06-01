@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+$color-main: hsl(4, 100%, 67%);
+$font-family-roboto: "Roboto", sans-serif;
+$breakpoint-tablet: 768px;
+
+html {
+  font-family: $font-family-roboto;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
+.hover-focus-states {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+
+.hover-focus-states:hover {
+  background-color:  hsl(4, 100%, 67%);;
+  color: #fff;
+  border-color:  hsl(4, 100%, 67%);;
+}
+
+.hover-focus-states:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  border-color: hsl(4, 100%, 67%);;
+}
+
+.newsletter {
+  height: 100vh;
+  width: 100%;
+  &__svg-container {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    .svg-desktop {
+      display: none;
+    }
+    .svg-mobile {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__signup {
+    margin-block: 2.5rem;
+    margin-inline: 1.5rem;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 2rem;
+    }
+    p {
+      margin-bottom: 1.5rem;
+    }
+    li {
+      position: relative;
+      padding-left: 2rem;
+      margin-block: 1rem;
+
+      &::before {
+        content: "";
+
+        position: absolute;
+        left: 0;
+        top: 0%;
+        width: 1.25rem;
+        height: 1.25rem;
+        transform: translateY(0%);
+        background: url(./assets/images/icon-list.svg) no-repeat center center;
+        background-size: contain;
+      }
+    }
+    h1 {
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  &__form {
+  }
+
+  &__form-group {
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    label {
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+  }
+
+  &__input {
+    border: 1px solid hsl(231, 7%, 60%);
+    width: 100%;
+    height: 50px;
+    border-radius: 0.5rem;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+    -moz-appearance: none; /* Remove default styling in Firefox */
+    appearance: none; /* Remove default styling in other browsers */
+    transition: border-color 0.3s ease;
+    padding-left: 1rem;
+  }
+
+  &__error-message {
+    display: none;
+    font-weight: 700;
+    font-size: 0.75rem;
+    color: hsl(4, 100%, 67%);
+  }
+
+  &__success-message {
+    display: none;
+  }
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+  color: white;
+  background-color: hsl(234, 29%, 20%);
+  width: 100%;
+  height: 50px;
+  border-radius: 0.5rem;
+  padding-block: 1rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  font-weight: 700;
+}
+
+.success-message {
+  display: none;
+  margin: 2rem;
+  position: relative;
+  height: 100vh;
+  .success-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    h1 {
+      margin-block: 1rem;
+    }
+  }
+  button {
+    position: absolute;
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 768px) {
+  
+    .content-container {
+    display: flex;
+    flex-direction: row;
+    border-radius: 1.5rem;
+    background-color: white;
+    padding: 2rem;
+  }
+
+  .newsletter {
+    background-color: hsl(235, 18%, 26%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__svg-container {
+      max-width: 40%;
+      max-height: 100%;
+      width: 100%;
+      order: 2;
+      .svg-desktop {
+        display: block;
+      }
+      .svg-mobile {
+        display: none;
+      }
+    }
+    &__content-container{
+        order: 1;
+    }
+    h1{
+        font-size: 3rem;
+        margin-bottom: 2rem;
+    }
+    ul {
+        margin-bottom: 4rem;
+
+    }
+  }
+
+  .success-message{
+    background-color: white;
+    border-radius: 2rem;
+    display: none;
+    margin: 2rem;
+    height: auto;
+    padding: 2.5rem;
+    max-width: 40%;
+  
+  .success-wrapper {
+    h1 {
+      margin-block: 1rem;
+    }
+  }
+  button {
+    position: static;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 1rem;
+
+
+  }
+  }
+}

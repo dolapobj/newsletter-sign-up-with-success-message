@@ -1,0 +1,3 @@
+#add the hover functionality 
+add the functionality to the dismiss button - done
+add the email insertion in the success email - done
